@@ -136,10 +136,9 @@ const game = () => {
     // Start Vars
     const rowInputs = document.querySelectorAll(".inputs .row-i");
     // Words
-    const words = ["able", "acid", "aged", "also", "area", "army", "away", "baby", "back", "ball", "actor", "again", "alert", "allow", "argue", "aware", "beach", "bring", "carry", "clear", "abroad", "casual", "around", "couple", "accept", "caught", "arrive", "course"];
-    // const any = ["actor", "again", "alert", "allow", "argue", "aware", "beach", "bring", "carry", "clear", "abroad", "casual", "around", "couple", "accept", "caught", "arrive", "course"];
+    const WordsLow = ["Bulk", "Ship", "Tour", "Look", "Vast", "Site", "Many", "Pink", "Cost", "Cool", "Tell", "Keep", "Back", "Step", "Fast", "Jury", "Stop", "Pair", "Only", "Save", "Fate", "Ease", "Thus", "Well", "Wish", "Flat", "Move", "Lady", "Boss", "Good", "Wise", "Wide", "Lift", "Edge", "Busy", "Hate", "Iron", "User", "Cell", "Slip", "Inch", "Kick", "Rear", "East", "Spot", "Earn", "Calm", "Area", "Also", "Golf", "Mind", "Fund", "True", "Nice", "Race", "Mile", "Tone", "Door", "Snow", "Wall", "Real", "Live", "Salt", "Pull", "Park", "Shop", "Care", "Miss", "Wife", "Warm", "Tank", "Over", "Feet", "Rest", "Sand", "Bank", "Hour", "Line", "Home", "Fact", "Gate", "Cold", "Feed", "Nose", "Link", "Stay", "King", "Self", "Burn", "Lock", "Such", "Lake", "Bear", "Army", "View", "Load", "Firm", "Call", "Poor", "Dean", "Fair", "Able", "News", "Vary", "Base", "Word", "Long", "Sell", "Shut", "Dear", "Pack", "Open", "Some", "Cope", "Past", "Trip", "Left", "Huge", "Will", "Hurt", "Four", "Pain", "Same", "Post", "Seat", "Grow", "Poll", "Down", "Debt", "Part", "Pass", "Okay", "Mood", "Luck", "Bowl", "Gray", "Menu", "Fish", "Rely", "Plan", "Rush", "Join", "Safe", "Dual", "Hang", "Fine", "Sort", "Yard", "Both", "Form", "Slow", "Most", "Push", "Band", "Tiny", "Chip", "Jump", "Mean", "Tape", "From", "Book", "Meet", "Dose", "Feel", "When", "Yeah", "Copy", "Send", "Ring", "Belt", "Port", "Have", "Rain", "Zero", "Aged", "Goal", "Film", "Then", "Loan", "Pace", "Need", "Land", "Farm", "Road", "Rate", "Bath", "More", "Desk", "Drug", "File", "Weak", "Like", "Duty", "Soon", "Hell", "Game", "Disk", "Life", "Glad", "West", "Plug", "Shot", "Very", "Skin", "Sale", "Fear", "Deny", "Hole", "Must", "Harm", "Vote", "Lead", "Talk", "Logo", "Core", "Want", "Rule",  "abets","abide","abode","about","above","acids","acrid","acted","actor","adage","adapt","added","actor","again","alert","allow","argue","aware","beach","bring","carry","clear","abbey","which","there","their","about","would","these","other","words","could","write","first","water","after","where","right","think","three","years","place","sound","great","again","still","every","small","found","those","never","under","might","while","house","world","below","asked","going","large","until","along","shall","being","often","earth","began","since","study","night","light","above","paper","parts","young","story","point","times","heard","whole","white","given","means","music","miles","thing","today","later","using","money","lines","order","group","among","learn","known","space","table","early","trees","short","hands","state","black","shown","stood","front","voice","kinds","makes","comes","close","power","lived","vowel","taken","built","heart","ready","quite","class","bring","round","horse","shows","piece","green","stand","birds","start","river","tried","least","field","whose","girls","leave","added","color","third","hours","moved","plant","doing","names","forms","heavy","ideas","cried","check","floor","begin","woman","alone","plane","spell","watch","carry","wrote","clear","named","books","child","glass","human","takes","party","build","seems","blood","sides","seven","mouth","solve","north","value","death","maybe","happy","tells","gives","looks","shape","lives","steps","areas","sense","speak","force","ocean","speed","women","metal","south","grass","scale","cells","lower","sleep","wrong","pages","ships","needs","rocks","eight","major","level","total","ahead","reach","stars","store","sight","terms","catch"];
     function chose () {
-        return chosenWord = words[Math.floor(Math.random() * words.length)].toLowerCase();
+        return chosenWord = WordsLow[Math.floor(Math.random() * WordsLow.length)].toLowerCase();
     }
     chose();
     function countColumns () {
@@ -293,7 +292,8 @@ const game = () => {
         };
         // -----------------------
         // Not In Word List Function
-        function notInList () {
+        function notInList() {
+            animateWrong();
             notList.innerHTML = "Not in word list";
             notList.style.transform = "translate(-50%, 0)";
             setTimeout(() => {
@@ -302,12 +302,25 @@ const game = () => {
         };
         // -----------------------
         // Not Enough Letters Function
-        function notLetters () {
+        function notLetters() {
+            animateWrong();
             notList.innerHTML = "Not enough letters"
             notList.style.transform = "translate(-50%, 0)";
             setTimeout(() => {
                 notList.style.transform = "translate(-50%, -100px)";                        
             }, 1500);
+        };
+        // -----------------------
+        // Animate Wrong function 
+        function animateWrong () {
+            if (rowInputs[rowNum].className === "row-i") {
+                rowInputs[rowNum].className = "row-i shake-horizontal";
+            } else {
+                rowInputs[rowNum].className = "row-i";
+                setTimeout(() => {
+                    rowInputs[rowNum].className = "row-i shake-horizontal";
+                }, 10);
+            }
         };
         // -----------------------
         // Create PopUp Game Finish Function
