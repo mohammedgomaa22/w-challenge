@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Challenge</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- main css file -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;800;900&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+    <div class="page">
+        <!-- Start Navbar -->
+        <nav class="navbar">
+            <!-- Side Nav -->
+            <div class="side-nav">
+                <i class="toggle fas fa-bars"></i>
+                <div class="nav">
+                    <!-- Head -->
+                    <div class="head">
+                        <h3 class="">W | Games</h3>
+                        <!-- BTN Close -->
+                        <i class="close fas fa-xmark"></i>
+                        <span>More from new york times games</span>
+                    </div>
+                    <!-- UL Games -->
+                    <ul class="others-game">
+                        <li>
+                            <a href="#">
+                                <img src="pic/icons/bee.png" alt="">
+                                <span>Spelling Bee</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="pic/icons/cross.png" alt="">
+                                <span>The Crossword</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="pic/icons/mini.png" alt="">
+                                <span>The Mini</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="pic/icons/digits.png" alt="">
+                                <span>Digits</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="pic/icons/bot.png" alt="">
+                                <span>Word Challenge Bot</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span>More Games...</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- Sign Up -->
+                    <div class="sign-up">
+                        <button>Sign Up</button>
+                        <button>Log in</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Title Website -->
+            <div class="title">
+                <h1>W | Challenge</h1>
+            </div>
+            <!-- Tools -->
+            <div class="tools">
+                <span>
+                    <i class="e-info fas fa-question"></i>
+                </span>
+                <span>
+                    <i class="e-rank fas fa-chart-simple"></i>
+                </span>
+                <span>
+                    <i class="e-setting fas fa-gear"></i>
+                </span>
+            </div>
+        </nav>
+        <!-- End Navbar -->
+        <div class="content">
+            <!-- PopUp Error Message -->
+            <div class="not-in-list"></div>
+            <!-- PopUp Finish Game -->
+            <div class="game-finish">
+                <div class="popup">
+                    <h1 class="winner"></h1>
+                    <h3 class="winner"></h3>
+                    <p></p>
+                    <button></button>
+                </div>
+            </div>
+            <!-- Start Overlay -->
+            <div class="overlay">
+                <!-- Info -->
+                <div class="info">
+                    <!-- Head -->
+                    <div class="head">
+                        <!-- BTN Close -->
+                        <i class="close fas fa-xmark"></i>
+                        <h3>How To Play</h3>
+                        <span class="try-num"></span>
+                    </div>
+                    <!-- UL -->
+                    <ul class="ul-info">
+                        <li>Each guess must be a valid 5-letter word.</li>
+                        <li>The color of the tiles will change to show how close your guess was to the word.</li>
+                    </ul>
+                    <!-- Examples -->
+                    <div class="example">
+                        <h4>Examples</h4>
+                        <!-- EX-1 -->
+                        <div class="ex">
+                            <div class="row-ex">
+                                <span class="l act-1">w</span>
+                                <span class="l">e</span>
+                                <span class="l">a</span>
+                                <span class="l">r</span>
+                                <span class="l">y</span>
+                            </div>
+                            <p><strong>W</strong> is in the word and in the correct spot.</p>
+                        </div>
+                        <!-- EX-2 -->
+                        <div class="ex">
+                            <div class="row-ex">
+                                <span class="l">p</span>
+                                <span class="l act-2">i</span>
+                                <span class="l">l</span>
+                                <span class="l">l</span>
+                                <span class="l">s</span>
+                            </div>
+                            <p><strong>I</strong> is in the word but in the wrong spot.</p>
+                        </div>
+                        <!-- EX-3 -->
+                        <div class="ex">
+                            <div class="row-ex">
+                                <span class="l">v</span>
+                                <span class="l">a</span>
+                                <span class="l">g</span>
+                                <span class="l act-3">u</span>
+                                <span class="l">e</span>
+                            </div>
+                            <p><strong>U</strong> is not in the word in any spot.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Rank -->
+                <div class="rank">
+                    <!-- Head -->
+                    <div class="head">
+                        <!-- BTN Close -->
+                        <i class="close fas fa-xmark"></i>
+                        <h3>Weekly Ranking</h3>
+                        <!-- Top Players -->
+                        <div class="top-players">
+                            <div>
+                                <img src="pic/1.jpg" alt="">
+                            </div>
+                            <div>
+                                <img src="pic/2.jpg" alt="">
+                            </div>
+                            <div>
+                                <img src="pic/friend-03.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- UL Players -->
+                    <ul class="ul-players">
+                        <li>
+                            <img src="pic/1.jpg" alt="">
+                            <div class="name">Mohammed</div>
+                            <div class="points">393 pt</div>
+                        </li>
+                        <li>
+                            <img src="pic/2.jpg" alt="">
+                            <div class="name">Gom3a</div>
+                            <div class="points">356 pt</div>
+                        </li>
+                        <li>
+                            <img src="pic/friend-03.jpg" alt="">
+                            <div class="name">Abdullah</div>
+                            <div class="points">340 pt</div>
+                        </li>
+                        <li>
+                            <img src="pic/friend-01.jpg" alt="">
+                            <div class="name">Ali</div>
+                            <div class="points">320 pt</div>
+                        </li>
+                        <li>
+                            <img src="pic/friend-04.jpg" alt="">
+                            <div class="name">Said</div>
+                            <div class="points">316 pt</div>
+                        </li>
+                        <li>
+                            <img src="pic/friend-05.jpg" alt="">
+                            <div class="name">Ahmed</div>
+                            <div class="points">290 pt</div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Setting -->
+                <div class="setting">
+                    <!-- Head -->
+                    <div class="head">
+                        <!-- BTN Close -->
+                        <i class="close fas fa-xmark"></i>
+                        <h3>Settings</h3>
+                    </div>
+                    <!-- UL -->
+                    <ul class="ul-setting">
+                        <li>
+                            <p>Dark Theme</p>
+                            <div class="mode">
+                                <i class="fa-regular fa-sun"></i>
+                            </div>
+                        </li>
+                        <li>
+                            <p>Hard Mode
+                                <span>Any revealed hints must be used in subsequent guesses</span>
+                            </p>
+                            <label>
+                                <input class="toggle-checkbox" type="checkbox">
+                                <div class="toggle-switch"></div>
+                            </label>
+                        </li>
+                        <li class="high-color">
+                            <p>High Contrast Mode
+                                <span>For improved color vision</span>
+                            </p>
+                            <label>
+                                <input class="toggle-checkbox" type="checkbox">
+                                <div class="toggle-switch"></div>
+                            </label>
+                        </li>
+                        <li>
+                            <p>Feedback</p>
+                            <a href="#">Email</a>
+                        </li>
+                        <li>
+                            <p>Community</p>
+                            <a href="#">Twitter</a>
+                        </li>
+                        <li>
+                            <p>Questions?</p>
+                            <a href="#">FAQ</a>
+                        </li>
+                        <li>© 2023 M|G Company</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- End Overlay -->
+            <!-- Start Game -->
+            <div class="game">
+                <!-- Start Inputs -->
+                <div class="inputs">
+                    <div class="row-i"></div>
+                    <div class="row-i"></div>
+                    <div class="row-i"></div>
+                    <div class="row-i"></div>
+                    <div class="row-i"></div>
+                    <div class="row-i"></div>
+                </div>
+                <!-- End Inputs -->
+                <!-- Start Letters -->
+                <div class="letters">
+                    <div class="row-l">
+                        <button data-key="q" class="l">q</button>
+                        <button data-key="w" class="l">w</button>
+                        <button data-key="e" class="l">e</button>
+                        <button data-key="r" class="l">r</button>
+                        <button data-key="t" class="l">t</button>
+                        <button data-key="y" class="l">y</button>
+                        <button data-key="u" class="l">u</button>
+                        <button data-key="i" class="l">i</button>
+                        <button data-key="o" class="l">o</button>
+                        <button data-key="p" class="l">p</button>
+                    </div>
+                    <div class="row-l">
+                        <button data-key="a" class="l">a</button>
+                        <button data-key="s" class="l">s</button>
+                        <button data-key="d" class="l">d</button>
+                        <button data-key="f" class="l">f</button>
+                        <button data-key="g" class="l">g</button>
+                        <button data-key="h" class="l">h</button>
+                        <button data-key="j" class="l">j</button>
+                        <button data-key="k" class="l">k</button>
+                        <button data-key="l" class="l">l</button>
+                    </div>
+                    <div class="row-l">
+                        <button data-key="enter" class="l">enter</button>
+                        <button data-key="z" class="l">z</button>
+                        <button data-key="x" class="l">x</button>
+                        <button data-key="c" class="l">c</button>
+                        <button data-key="v" class="l">v</button>
+                        <button data-key="b" class="l">b</button>
+                        <button data-key="n" class="l">n</button>
+                        <button data-key="m" class="l">m</button>
+                        <button data-key="delete" class="l delete fas fa-delete-left">
+                        </button>
+                    </div>
+                </div>
+                <!-- End Letters -->
+            </div>
+            <!-- End Game -->
+        </div>
+    </div>
+    <!-- JS File -->
+    <script src="js/main.js"></script>
+</body>
+</html>
