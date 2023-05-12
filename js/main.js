@@ -136,9 +136,13 @@ const game = () => {
     // Start Vars
     const rowInputs = document.querySelectorAll(".inputs .row-i");
     // Words
-    const WordsLow = ["Bulk", "Ship", "Tour", "Look", "Vast", "Site", "Many", "Pink", "Cost", "Cool", "Tell", "Keep", "Back", "Step", "Fast", "Jury", "Stop", "Pair", "Only", "Save", "Fate", "Ease", "Thus", "Well", "Wish", "Flat", "Move", "Lady", "Boss", "Good", "Wise", "Wide", "Lift", "Edge", "Busy", "Hate", "Iron", "User", "Cell", "Slip", "Inch", "Kick", "Rear", "East", "Spot", "Earn", "Calm", "Area", "Also", "Golf", "Mind", "Fund", "True", "Nice", "Race", "Mile", "Tone", "Door", "Snow", "Wall", "Real", "Live", "Salt", "Pull", "Park", "Shop", "Care", "Miss", "Wife", "Warm", "Tank", "Over", "Feet", "Rest", "Sand", "Bank", "Hour", "Line", "Home", "Fact", "Gate", "Cold", "Feed", "Nose", "Link", "Stay", "King", "Self", "Burn", "Lock", "Such", "Lake", "Bear", "Army", "View", "Load", "Firm", "Call", "Poor", "Dean", "Fair", "Able", "News", "Vary", "Base", "Word", "Long", "Sell", "Shut", "Dear", "Pack", "Open", "Some", "Cope", "Past", "Trip", "Left", "Huge", "Will", "Hurt", "Four", "Pain", "Same", "Post", "Seat", "Grow", "Poll", "Down", "Debt", "Part", "Pass", "Okay", "Mood", "Luck", "Bowl", "Gray", "Menu", "Fish", "Rely", "Plan", "Rush", "Join", "Safe", "Dual", "Hang", "Fine", "Sort", "Yard", "Both", "Form", "Slow", "Most", "Push", "Band", "Tiny", "Chip", "Jump", "Mean", "Tape", "From", "Book", "Meet", "Dose", "Feel", "When", "Yeah", "Copy", "Send", "Ring", "Belt", "Port", "Have", "Rain", "Zero", "Aged", "Goal", "Film", "Then", "Loan", "Pace", "Need", "Land", "Farm", "Road", "Rate", "Bath", "More", "Desk", "Drug", "File", "Weak", "Like", "Duty", "Soon", "Hell", "Game", "Disk", "Life", "Glad", "West", "Plug", "Shot", "Very", "Skin", "Sale", "Fear", "Deny", "Hole", "Must", "Harm", "Vote", "Lead", "Talk", "Logo", "Core", "Want", "Rule",  "abets","abide","abode","about","above","acids","acrid","acted","actor","adage","adapt","added","actor","again","alert","allow","argue","aware","beach","bring","carry","clear","abbey","which","there","their","about","would","these","other","words","could","write","first","water","after","where","right","think","three","years","place","sound","great","again","still","every","small","found","those","never","under","might","while","house","world","below","asked","going","large","until","along","shall","being","often","earth","began","since","study","night","light","above","paper","parts","young","story","point","times","heard","whole","white","given","means","music","miles","thing","today","later","using","money","lines","order","group","among","learn","known","space","table","early","trees","short","hands","state","black","shown","stood","front","voice","kinds","makes","comes","close","power","lived","vowel","taken","built","heart","ready","quite","class","bring","round","horse","shows","piece","green","stand","birds","start","river","tried","least","field","whose","girls","leave","added","color","third","hours","moved","plant","doing","names","forms","heavy","ideas","cried","check","floor","begin","woman","alone","plane","spell","watch","carry","wrote","clear","named","books","child","glass","human","takes","party","build","seems","blood","sides","seven","mouth","solve","north","value","death","maybe","happy","tells","gives","looks","shape","lives","steps","areas","sense","speak","force","ocean","speed","women","metal","south","grass","scale","cells","lower","sleep","wrong","pages","ships","needs","rocks","eight","major","level","total","ahead","reach","stars","store","sight","terms","catch"];
+    const arrWords = ["Bulk", "Ship", "Tour", "Look", "Vast", "Site", "Many", "Pink", "Cost", "Cool", "Tell", "Keep", "Back", "Step", "Fast", "Jury", "Stop", "Pair", "Only", "Save", "Fate", "Ease", "Thus", "Well", "Wish", "Flat", "Move", "Lady", "Boss", "Good", "Wise", "Wide", "Lift", "Edge", "Busy", "Hate", "Iron", "User", "Cell", "Slip", "Inch", "Kick", "Rear", "East", "Spot", "Earn", "Calm", "Area", "Also", "Golf", "Mind", "Fund", "True", "Nice", "Race", "Mile", "Tone", "Door", "Snow", "Wall", "Real", "Live", "Salt", "Pull", "Park", "Shop", "Care", "Miss", "Wife", "Warm", "Tank", "Over", "Feet", "Rest", "Sand", "Bank", "Hour", "Line", "Home", "Fact", "Gate", "Cold", "Feed", "Nose", "Link", "Stay", "King", "Self", "Burn", "Lock", "Such", "Lake", "Bear", "Army", "View", "Load", "Firm", "Call", "Poor", "Dean", "Fair", "Able", "News", "Vary", "Base", "Word", "Long", "Sell", "Shut", "Dear", "Pack", "Open", "Some", "Cope", "Past", "Trip", "Left", "Huge", "Will", "Hurt", "Four", "Pain", "Same", "Post", "Seat", "Grow", "Poll", "Down", "Debt", "Part", "Pass", "Okay", "Mood", "Luck", "Bowl", "Gray", "Menu", "Fish", "Rely", "Plan", "Rush", "Join", "Safe", "Dual", "Hang", "Fine", "Sort", "Yard", "Both", "Form", "Slow", "Most", "Push", "Band", "Tiny", "Chip", "Jump", "Mean", "Tape", "From", "Book", "Meet", "Dose", "Feel", "When", "Yeah", "Copy", "Send", "Ring", "Belt", "Port", "Have", "Rain", "Zero", "Aged", "Goal", "Film", "Then", "Loan", "Pace", "Need", "Land", "Farm", "Road", "Rate", "Bath", "More", "Desk", "Drug", "File", "Weak", "Like", "Duty", "Soon", "Hell", "Game", "Disk", "Life", "Glad", "West", "Plug", "Shot", "Very", "Skin", "Sale", "Fear", "Deny", "Hole", "Must", "Harm", "Vote", "Lead", "Talk", "Logo", "Core", "Want", "Rule"];
+    let wordsLow = [];
+    arrWords.forEach(w => {
+        wordsLow.push(w.toLowerCase());
+    });
     function chose () {
-        return chosenWord = WordsLow[Math.floor(Math.random() * WordsLow.length)].toLowerCase();
+        return chosenWord = wordsLow[Math.floor(Math.random() * wordsLow.length)].toLowerCase();
     }
     chose();
     function countColumns () {
@@ -170,7 +174,8 @@ const game = () => {
     // ---------------
     setTimeout(() => {
         // -----------------------------------
-        // -------------- Start Var -------------- 
+        // -------------- Start Var --------------
+        let keyLetters = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "a", "s", "d", "f", "g", "h", "j", "k", "l", "z", "x", "c", "v", "b", "n", "m"];
         let boxNum = 0;
         let rowNum = 0;
         let points = 0;
@@ -178,23 +183,24 @@ const game = () => {
         // -------------- End Var --------------
         // ------------------------
         // -------------- Start Coding --------------
-        document.addEventListener("click", (e) => {
+        // Clicked Keyboard ---------------------------------------------------
+        document.addEventListener("keydown", (e) => {
             // Any Key, Not (Enter , Delete) 
-            if (e.target.className === "l" && e.target.dataset.key != "enter" && e.target.dataset.key != "delete") {
+            if (keyLetters.includes(e.key.toLowerCase())) {
                 if (boxNum < countCol) {
-                    rowInputs[rowNum].childNodes[boxNum].textContent = e.target.dataset.key;
+                    rowInputs[rowNum].childNodes[boxNum].textContent = e.key;
                     rowInputs[rowNum].childNodes[boxNum].classList.add("border");
                     boxNum++;
                 }
             }
             // Key (Delete) 
-            if (e.target.dataset.key === "delete") {
+            if (e.key.toLowerCase() === "backspace" || e.key.toLowerCase() === "delete") {
                 if (boxNum > 0) {
                     deleteLetters();
                 }
             }
             // Key (Enter)
-            if (e.target.dataset.key === "enter") {
+            if (e.key.toLowerCase() === "enter") {
                 if (rowNum < rowInputs.length) {
                     if (boxNum == countCol) {
                         let arrWrite = [];
@@ -202,7 +208,7 @@ const game = () => {
                             arrWrite.push(w.innerHTML.toLowerCase());
                         });
                         // ----------------
-                        if (words.includes(arrWrite.join(""))) {
+                        if (wordsLow.includes(arrWrite.join(""))) {
                             if (arrWrite.join("") == chosenWord) {
                                 trueAnswer();
                             } else {
@@ -217,6 +223,57 @@ const game = () => {
                 }
             }
         });
+        // ---------------------------------------------------
+        // Clicked Buttons ---------------------------------------------------
+        const btnLetters = document.querySelectorAll(".letters button");
+        // ------------------------
+        btnLetters.forEach(letter => {
+            letter.addEventListener("click", () => {
+                if (keyLetters.includes(letter.dataset.key) && letter.dataset.key != "enter" && letter.dataset.key != "delete") {
+                    if (boxNum < countCol) {
+                        rowInputs[rowNum].childNodes[boxNum].textContent = letter.dataset.key;
+                        rowInputs[rowNum].childNodes[boxNum].classList.add("border");
+                        boxNum++;
+                        letter.className = "click";
+                    }
+                }
+                // Key (Delete) 
+                if (letter.dataset.key === "delete") {
+                    if (boxNum > 0) {
+                        deleteLetters();
+                        if (letter.dataset.key != "delete" && letter.dataset.key != "enter") {
+                            letter.className = "";
+                        }
+                    }
+                }
+                // Key (Enter)
+                if (letter.dataset.key === "enter") {
+                    if (rowNum < rowInputs.length) {
+                        if (boxNum == countCol) {
+                            let arrWrite = [];
+                            rowInputs[rowNum].childNodes.forEach(w => {
+                                arrWrite.push(w.innerHTML.toLowerCase());
+                            });
+                            // ----------------
+                            if (wordsLow.includes(arrWrite.join(""))) {
+                                if (arrWrite.join("") == chosenWord) {
+                                    trueAnswer();
+                                } else {
+                                    falseAnswer();
+                                }
+                            } else {
+                                notInList();
+                            }
+                        } else {
+                            notLetters();
+                        }
+                    }
+                }
+            });
+        });
+        // document.addEventListener("click", (e) => {
+        //     // Any Key, Not (Enter , Delete) 
+        // });
         // -------------- End Coding --------------
         // ------------------
         // --------- Start Functions With clicked Enter Key ---------
@@ -258,8 +315,8 @@ const game = () => {
         // False Answer Function
         function falseAnswer () {
             rowInputs[rowNum].childNodes.forEach((lWrite, iWrite) => {
-                if (chosenWord.split("").includes(lWrite.innerHTML)) {
-                    if (iWrite == chosenWord.split("").indexOf(lWrite.innerHTML)) {
+                if (chosenWord.split("").includes(lWrite.textContent)) {
+                    if (iWrite == chosenWord.split("").indexOf(lWrite.textContent)) {
                         lWrite.classList.add("true-color");
                         lWrite.style.border = "0";
                     } else {
@@ -352,8 +409,18 @@ const game = () => {
                 popUp.style.opacity = "1";
             }, 100);
             popUp.style.transform = "translateY(0)";
-            // Events
+            // Clicked Next BTN
+            document.onkeydown = (e) => {
+                if (e.key == " " || e.key == "Escape") {
+                    nextGame();
+                }
+            }
             btnNext.onclick = () => {
+                nextGame();
+            };
+            // -----------------------
+            // Next Game Function
+            function nextGame () {
                 // Sum Total Points 
                 totalPoints += points;
                 // Reset Counters
@@ -377,7 +444,6 @@ const game = () => {
                 popUp.style.opacity = "0";
                 popUp.style.transform = "translateY(500px)";
                 // Show Result Finally
-                console.log("done");
                 console.log(totalPoints);
             };
         };
