@@ -1,55 +1,113 @@
-// Light and Dark Mode
-const lightAndDark = () => {
+// Settings Buttons
+const SettingsButtons = () => {
+    // Start Var 
     const btnChange = document.querySelector(".mode"),
-        mode = document.querySelector(".mode i"),
-        root = document.querySelector(":root");
+    mode = document.querySelector(".mode i"),
+    root = document.querySelector(":root");
+    // End Var
     // -----------------
-    // Check localStorage
-    if (localStorage.getItem("white") && localStorage.getItem("black")) {
-        // Set Color in page
-        root.style.setProperty('--white-color', `${localStorage.getItem("white")}`);
-        root.style.setProperty('--black-color', `${localStorage.getItem("black")}`);
-        // --------
-        if (localStorage.getItem("icon")) {
-            mode.className = `fa-regular ${localStorage.getItem("icon")}`;
-        }
+    // Light and Dark Mode
+    function darkMode() {
+        // Check localStorage
+        if (localStorage.getItem("white") && localStorage.getItem("black")) {
+            // Set Color in page
+            root.style.setProperty('--white-color', `${localStorage.getItem("white")}`);
+            root.style.setProperty('--black-color', `${localStorage.getItem("black")}`);
+            // --------
+            if (localStorage.getItem("icon")) {
+                mode.className = `fa-regular ${localStorage.getItem("icon")}`;
+            }
+        };
+        // Event btn
+        btnChange.addEventListener(("click"), () => {
+            if (mode.classList.contains("fa-sun")) {
+                // Change Icon BTN
+                mode.classList.replace("fa-sun", "fa-moon");
+                // Set Color in page
+                root.style.setProperty('--white-color', 'black');
+                root.style.setProperty('--black-color', 'white');
+                // Set Color in local
+                localStorage.setItem("white", "black");
+                localStorage.setItem("black", "white");
+                // ---------
+                localStorage.setItem("icon", "fa-moon");
+            } else {
+                // Change Icon BTN
+                mode.classList.replace("fa-moon", "fa-sun");
+                // Set Color in page
+                root.style.setProperty('--white-color', 'white');
+                root.style.setProperty('--black-color', 'black');
+                // Set Color in local
+                localStorage.setItem("white", "white");
+                localStorage.setItem("black", "black");
+                // ---------
+                localStorage.setItem("icon", "fa-sun");
+            }
+        });        
     };
-    // Event btn
-    btnChange.addEventListener(("click"), () => {
-        if (mode.classList.contains("fa-sun")) {
-            // Change Icon BTN
-            mode.classList.replace("fa-sun", "fa-moon");
+    darkMode();
+    // -----------------
+    // High Color Mode
+    function highColor() {
+        const highInput = document.querySelector(".high-color input");
+        const changeColor = document.querySelector(".high-color .changeColor");
+        // Check localStorage
+        if (localStorage.getItem("highMode") && localStorage.getItem("greenCol") && localStorage.getItem("goldCol") && localStorage.getItem("check")) {
+            // Change Class Name 
+            changeColor.classList.replace("on", `${localStorage.getItem("highMode")}`);
+            changeColor.classList.replace("off", `${localStorage.getItem("highMode")}`);
             // Set Color in page
-            root.style.setProperty('--white-color', 'black');
-            root.style.setProperty('--black-color', 'white');
-            // Set Color in local
-            localStorage.setItem("white", "black");
-            localStorage.setItem("black", "white");
-            // ---------
-            localStorage.setItem("icon", "fa-moon");
-        } else {
-            // Change Icon BTN
-            mode.classList.replace("fa-moon", "fa-sun");
-            // Set Color in page
-            root.style.setProperty('--white-color', 'white');
-            root.style.setProperty('--black-color', 'black');
-            // Set Color in local
-            localStorage.setItem("white", "white");
-            localStorage.setItem("black", "black");
-            // ---------
-            localStorage.setItem("icon", "fa-sun");
-        }
-    });
-    // // High Color Mode
-    // if (document.querySelector(".high-color input:checked")) {
-    //     console.log("yes");
-    // } else {
-    //     document.querySelector(".high-color input").setAttribute("checked", "");
-    //     root.style.setProperty('--green-color', 'blue');
-    //     console.log(document.querySelector(".high-color input"));
-    // }
+            root.style.setProperty('--green-color', `${localStorage.getItem("greenCol")}`);
+            root.style.setProperty('--gold-color', `${localStorage.getItem("goldCol")}`);
+            // Saved BTN Check 
+            highInput.setAttribute(`${localStorage.getItem("check")}`, "");
+        };
+        // localStorage.clear()
+        changeColor.addEventListener("click", () => {
+            if (changeColor.classList.contains("off")) {
+                // Set Color in page
+                changeColor.classList.replace("off", "on");
+                root.style.setProperty("--green-color", "#F5793A");
+                root.style.setProperty("--gold-color", "#85C0F9");
+                // Set Color in local
+                localStorage.setItem("highMode", "on");
+                localStorage.setItem("greenCol", "#F5793A");
+                localStorage.setItem("goldCol", "#85C0F9");
+                // Saved BTN Check 
+                setTimeout(() => {
+                    if (!highInput.hasAttribute("checked")) {
+                        highInput.setAttribute("checked", "");
+                        localStorage.setItem("check", "checked");
+                    }                        
+                }, 10);
+            } else {
+                // Set Color in page
+                changeColor.classList.replace("on", "off");
+                root.style.setProperty("--green-color", "#6AAA64");
+                root.style.setProperty("--gold-color", "#C9B458");
+                // Set Color in local
+                localStorage.setItem("highMode", "off");
+                localStorage.setItem("greenCol", "#6AAA64");
+                localStorage.setItem("goldCol", "#C9B458");
+                // Saved BTN Check 
+                setTimeout(() => {
+                    if (highInput.hasAttribute("checked")) {
+                        highInput.removeAttribute("checked");
+                        localStorage.setItem("check", "");
+                    }                        
+                }, 10);
+            }
+        });
+    }
+    highColor();
+    // -----------------
+    // Play Mode
+    function playMode() {
+        
+    };
+    // playMode()
 };
-lightAndDark();
+SettingsButtons();
 // ------------------------------------------
 const toggler = () => {
     const nav = document.querySelector(".side-nav .nav");
@@ -138,6 +196,15 @@ const game = () => {
     // Words
     const arrWords = ["Bulk", "Ship", "Tour", "Look", "Vast", "Site", "Many", "Pink", "Cost", "Cool", "Tell", "Keep", "Back", "Step", "Fast", "Jury", "Stop", "Pair", "Only", "Save", "Fate", "Ease", "Thus", "Well", "Wish", "Flat", "Move", "Lady", "Boss", "Good", "Wise", "Wide", "Lift", "Edge", "Busy", "Hate", "Iron", "User", "Cell", "Slip", "Inch", "Kick", "Rear", "East", "Spot", "Earn", "Calm", "Area", "Also", "Golf", "Mind", "Fund", "True", "Nice", "Race", "Mile", "Tone", "Door", "Snow", "Wall", "Real", "Live", "Salt", "Pull", "Park", "Shop", "Care", "Miss", "Wife", "Warm", "Tank", "Over", "Feet", "Rest", "Sand", "Bank", "Hour", "Line", "Home", "Fact", "Gate", "Cold", "Feed", "Nose", "Link", "Stay", "King", "Self", "Burn", "Lock", "Such", "Lake", "Bear", "Army", "View", "Load", "Firm", "Call", "Poor", "Dean", "Fair", "Able", "News", "Vary", "Base", "Word", "Long", "Sell", "Shut", "Dear", "Pack", "Open", "Some", "Cope", "Past", "Trip", "Left", "Huge", "Will", "Hurt", "Four", "Pain", "Same", "Post", "Seat", "Grow", "Poll", "Down", "Debt", "Part", "Pass", "Okay", "Mood", "Luck", "Bowl", "Gray", "Menu", "Fish", "Rely", "Plan", "Rush", "Join", "Safe", "Dual", "Hang", "Fine", "Sort", "Yard", "Both", "Form", "Slow", "Most", "Push", "Band", "Tiny", "Chip", "Jump", "Mean", "Tape", "From", "Book", "Meet", "Dose", "Feel", "When", "Yeah", "Copy", "Send", "Ring", "Belt", "Port", "Have", "Rain", "Zero", "Aged", "Goal", "Film", "Then", "Loan", "Pace", "Need", "Land", "Farm", "Road", "Rate", "Bath", "More", "Desk", "Drug", "File", "Weak", "Like", "Duty", "Soon", "Hell", "Game", "Disk", "Life", "Glad", "West", "Plug", "Shot", "Very", "Skin", "Sale", "Fear", "Deny", "Hole", "Must", "Harm", "Vote", "Lead", "Talk", "Logo", "Core", "Want", "Rule"];
     let wordsLow = [];
+    // -----------------------------
+    // // Get Data From Json File
+    // let test =  fetch("../words.json").then((result) => {
+    //     return result.json();
+    // }).then((result) => {
+    //     // return result;
+    // });
+    // console.log(test);
+    // -----------------------------
     arrWords.forEach(w => {
         wordsLow.push(w.toLowerCase());
     });
@@ -162,7 +229,6 @@ const game = () => {
             for (let i = 0; i < countCol; i++) {
                 const colInputs = document.createElement("span");
                 // add classes 
-                colInputs.className = "i";
                 ele.appendChild(colInputs);
             }
         });     
@@ -327,6 +393,11 @@ const game = () => {
                     lWrite.classList.add("false-color");
                     lWrite.style.border = "0";
                 }
+                btnLetters.forEach(btn => {
+                    if (lWrite.textContent == btn.dataset.key) {
+                        btn.className = lWrite.className;
+                    }
+                });                    
             });
             boxNum = 0;
             rowNum++;
@@ -443,6 +514,10 @@ const game = () => {
                 popUp.style.display = "none";
                 popUp.style.opacity = "0";
                 popUp.style.transform = "translateY(500px)";
+                // Set BTN Classes
+                btnLetters.forEach(btn => {
+                    btn.className = "";
+                });
                 // Show Result Finally
                 console.log(totalPoints);
             };

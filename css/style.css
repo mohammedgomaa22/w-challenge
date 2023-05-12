@@ -657,7 +657,8 @@ body {
 .toggle-switch {
     width: 40px;
     height: 20px;
-    margin-top: -15px;
+    margin-top: -20px;
+    margin-left: -5px;
     background-color: #ccc;
     border-radius: 20px;
     position: relative;
@@ -727,7 +728,7 @@ body {
     display: grid;
     gap: 5px;
 }
-.game .inputs .row-i span.i {
+.game .inputs .row-i span {
     width: 100%;
     max-height: 55px;
     margin-bottom: 5px;
@@ -741,7 +742,7 @@ body {
     text-transform: uppercase;
     transition: 0.5s;
 }
-.game .inputs .row-i span.i::before {
+.game .inputs .row-i span::before {
     content: "";
     display: inline-block;
     padding-bottom: 75%;
@@ -793,7 +794,6 @@ body {
     align-items: center;
     flex: 1;
     cursor: pointer;
-    background-color: var(--main-color);
 }
 /* End Game */
 /* ---------------------------- */
@@ -815,22 +815,22 @@ body {
     30%,
     50%,
     70% {
-        -webkit-transform: translateX(-10px);
-        transform: translateX(-10px);
+        -webkit-transform: translateX(-2px);
+        transform: translateX(-2px);
     }
     20%,
     40%,
     60% {
-        -webkit-transform: translateX(10px);
-        transform: translateX(10px);
+        -webkit-transform: translateX(2px);
+        transform: translateX(2px);
     }
     80% {
-        -webkit-transform: translateX(8px);
-        transform: translateX(8px);
+        -webkit-transform: translateX(3px);
+        transform: translateX(3px);
     }
     90% {
-        -webkit-transform: translateX(-8px);
-        transform: translateX(-8px);
+        -webkit-transform: translateX(-3px);
+        transform: translateX(-3px);
     }
 }
 @keyframes shake-horizontal {
@@ -843,22 +843,22 @@ body {
     30%,
     50%,
     70% {
-    -webkit-transform: translateX(-10px);
-            transform: translateX(-10px);
+    -webkit-transform: translateX(-2px);
+            transform: translateX(-2px);
     }
     20%,
     40%,
     60% {
-    -webkit-transform: translateX(10px);
-            transform: translateX(10px);
+    -webkit-transform: translateX(2px);
+            transform: translateX(2px);
     }
     80% {
-    -webkit-transform: translateX(8px);
-            transform: translateX(8px);
+    -webkit-transform: translateX(3px);
+            transform: translateX(3px);
     }
     90% {
-    -webkit-transform: translateX(-8px);
-            transform: translateX(-8px);
+    -webkit-transform: translateX(-3px);
+            transform: translateX(-3px);
     }
 }
 
