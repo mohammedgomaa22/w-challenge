@@ -20,60 +20,121 @@
         <!-- Start Navbar -->
         <nav class="navbar">
             <!-- Side Nav -->
-            <div class="side-nav">
-                <i class="toggle fas fa-bars"></i>
-                <div class="nav">
+            <div class="my-profile">
+                <i class="toggle fas fa-user-large"></i>
+                <!-- Start Not User -->
+                <div class="side not-user">
                     <!-- Head -->
                     <div class="head">
-                        <h3 class="">W | Games</h3>
+                        <h3 class="">W | Challenge</h3>
                         <!-- BTN Close -->
                         <i class="close fas fa-xmark"></i>
-                        <span>More from new york times games</span>
                     </div>
-                    <!-- UL Games -->
-                    <ul class="others-game">
-                        <li>
-                            <a href="#">
-                                <img src="pic/icons/bee.png" alt="">
-                                <span>Spelling Bee</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="pic/icons/cross.png" alt="">
-                                <span>The Crossword</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="pic/icons/mini.png" alt="">
-                                <span>The Mini</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="pic/icons/digits.png" alt="">
-                                <span>Digits</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="pic/icons/bot.png" alt="">
-                                <span>Word Challenge Bot</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span>More Games...</span>
-                            </a>
-                        </li>
-                    </ul>
                     <!-- Sign Up -->
-                    <div class="sign-up">
-                        <button>Sign Up</button>
-                        <button>Log in</button>
+                    <div class="signUp">
+                        <p>To save your score, You must log in, If you not have previous account, You must to sign up a new account first.</p>
+                        <button class="main-btn">Log in</button>
+                        <span>OR</span>
+                        <button class="main-btn">Sign Up</button>
                     </div>
                 </div>
+                <!-- End Not User -->
+                <!-- Start User -->
+                <div class="side user">
+                    <!-- Head -->
+                    <div class="head">
+                        <h3 class="">W | Challenge</h3>
+                        <!-- BTN Close -->
+                        <i class="close fas fa-xmark"></i>
+                    </div>
+                    <!-- Profile -->
+                    <div class="profile">
+                        <div class="img">
+                            <img src="pic/1.jpg" alt="pro-pic">
+                        </div>
+                        <div class="name">
+                            <h3>Mohammed22</h3>
+                        </div>
+                        <div class="level">
+                            <p>Level 7</p>
+                            <div class="rate">
+                                <span style="width: 91.2%;">912 pt</span>
+                            </div>
+                        </div>
+                        <div class="profile-points">
+                            <p>Total Points: 7,912</p>
+                        </div>
+                    </div>
+                    <!-- Log Out -->
+                    <div class="log-out">
+                        <button class="main-btn">Log out</button>
+                        <button class="main-btn">Edit</button>
+                    </div>
+                </div>
+                <!-- End User -->
+                <!-- Start Sign Up -->
+                <div class="side sign-up">
+                    <div class="head">
+                        <h3 class="">W | Challenge</h3>
+                        <i class="close fas fa-xmark"></i>
+                    </div>
+                    <div class="form">
+                        <h3>Sign Up</h3>
+                        <form>
+                            <input type="text" min="6" max="18" placeholder="User Name" required>
+                            <input type="email" placeholder="Email" required>
+                            <input type="password" placeholder="Password" required>
+                            <div class="gender">
+                                <span class="" data-gender="male">Male</span>
+                                <span class="select" data-gender="female">Female</span>
+                            </div>
+                            <button  class="main-btn">Sign Up</button>
+                            <!-- With Social -->
+                            <div class="with-social">
+                                <p>or Contact with Social Media</p>
+                                <div class="google">
+                                    <i class="fab fa-google"></i>
+                                    Sign Up with Google
+                                </div>
+                                <div class="facebook">
+                                    <i class="fab fa-facebook-f"></i>
+                                    Sign Up with Facebook
+                                </div>
+                            </div>
+                            <p class="member">I'am already a member, <span>Log In</span></p>
+                        </form>
+                    </div>
+                </div>
+                <!-- End Sign Up -->
+                <!-- Start Login Up -->
+                <div class="side log-in">
+                    <div class="head">
+                        <h3 class="">W | Challenge</h3>
+                        <i class="close fas fa-xmark"></i>
+                    </div>
+                    <div class="form">
+                        <h3>Log in</h3>
+                        <form>
+                            <input type="text" min="6" max="18" placeholder="User Name Or Email" required>
+                            <input type="password" placeholder="Password" required>
+                            <button class="main-btn">Log In</button>
+                            <!-- With Social -->
+                            <div class="with-social">
+                                <p>or Contact with Social Media</p>
+                                <div class="google">
+                                    <i class="fab fa-google"></i>
+                                    Log In Up with Google
+                                </div>
+                                <div class="facebook">
+                                    <i class="fab fa-facebook-f"></i>
+                                    Log In with Facebook
+                                </div>
+                            </div>
+                            <p class="member">I'am not a member, <span>Sign Up</span></p>
+                        </form>
+                    </div>
+                </div>
+                <!-- End Log in -->
             </div>
             <!-- Title Website -->
             <div class="title">
@@ -118,7 +179,7 @@
                     </div>
                     <!-- UL -->
                     <ul class="ul-info">
-                        <li>Each guess must be a valid 5-letter word.</li>
+                        <li class="letter-num"></li>
                         <li>The color of the tiles will change to show how close your guess was to the word.</li>
                     </ul>
                     <!-- Examples -->
@@ -169,7 +230,7 @@
                         <!-- Top Players -->
                         <div class="top-players">
                             <div>
-                                <img src="pic/346098262_1271486423444545_7820089221650355052_n.jpg" alt="">
+                                <img src="pic/1.jpg" alt="">
                             </div>
                             <div>
                                 <img src="pic/notti.jpg" alt="">
@@ -182,33 +243,33 @@
                     <!-- UL Players -->
                     <ul class="ul-players">
                         <li>
-                            <img src="pic/346098262_1271486423444545_7820089221650355052_n.jpg" alt="">
-                            <div class="name">Mohammed</div>
+                            <img src="pic/1.jpg" alt="">
+                            <div class="name">Mohammed22</div>
                             <div class="points">393 pt</div>
                         </li>
                         <li>
                             <img src="pic/notti.jpg" alt="">
-                            <div class="name">Gom3a</div>
+                            <div class="name">Gom3a13</div>
                             <div class="points">356 pt</div>
                         </li>
                         <li>
                             <img src="pic/friend-03.jpg" alt="">
-                            <div class="name">Abdullah</div>
+                            <div class="name">Abdullah89</div>
                             <div class="points">340 pt</div>
                         </li>
                         <li>
                             <img src="pic/friend-01.jpg" alt="">
-                            <div class="name">Ali</div>
+                            <div class="name">Aliii</div>
                             <div class="points">320 pt</div>
                         </li>
                         <li>
                             <img src="pic/friend-04.jpg" alt="">
-                            <div class="name">Said</div>
+                            <div class="name">Saiid</div>
                             <div class="points">316 pt</div>
                         </li>
                         <li>
                             <img src="pic/friend-05.jpg" alt="">
-                            <div class="name">Ahmed</div>
+                            <div class="name">guest_11535</div>
                             <div class="points">290 pt</div>
                         </li>
                     </ul>
@@ -229,14 +290,16 @@
                                 <i class="fa-regular fa-sun"></i>
                             </div>
                         </li>
-                        <li>
-                            <p>Hard Mode
-                                <span>Any revealed hints must be used in subsequent guesses</span>
-                            </p>
-                            <label>
-                                <input class="toggle-checkbox" type="checkbox">
-                                <div class="toggle-switch"></div>
-                            </label>
+                        <li class="change-mode">
+                            <p>Change Game Mode</p>
+                            <span>After change game mode, Reload
+                            this page, Or close game and open again</span>
+                            <div class="game-mode">
+                                <span class="select" data-mode="beginner">Beginner</span>
+                                <span data-mode="amateur">Amateur</span>
+                                <span data-mode="semiPro">Semi-Pro</span>
+                                <span data-mode="professional">Professional</span>
+                            </div>
                         </li>
                         <li class="high-color">
                             <p>High Contrast Mode
@@ -268,6 +331,7 @@
             <div class="game">
                 <!-- Start Inputs -->
                 <div class="inputs">
+                    <div class="row-i"></div>
                     <div class="row-i"></div>
                     <div class="row-i"></div>
                     <div class="row-i"></div>

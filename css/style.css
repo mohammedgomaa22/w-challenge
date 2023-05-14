@@ -32,6 +32,9 @@ html {
 body {
     font-family: 'Raleway', sans-serif;
 }
+input:focus {
+    outline: none;
+}
 /* Start Component */
 /* MODE */
 .mode i {
@@ -126,7 +129,24 @@ body {
     transition: 0.3s;
 }
 .popup button:hover {
-    background-color: #588f53;
+    opacity: .9;
+}
+/* Main BTN */
+.main-btn {
+    width: 170px;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    border: 1px solid var(--black-color);
+    color: var(--white-color);
+    background-color: var(--black-color);
+    cursor: pointer;
+    transition: 0.3s;
+}
+.main-btn:hover {
+    background-color: var(--white-color);
+    color: var(--black-color);
 }
 /* End Component */
 /* Start Page */
@@ -161,40 +181,47 @@ body {
     border-bottom: 1px solid #ddd;
 }
 /* ---------------------------- */
-.navbar .side-nav .toggle {
+.navbar .my-profile > .toggle {
     font-size: 22px;
     cursor: pointer;
     color: var(--black-color);
 }
-.navbar .side-nav .nav {
-    min-width: 300px;
+/* Start Side Bar */
+/* Start Side */
+.navbar .my-profile > .side {
+    min-width: 350px;
+    height: calc(100vh - 70px);
     position: absolute;
     top: 100%;
     left: 0px;
     transition: 0.3s;
     padding: 20px 0;
+    color: var(--black-color);
     background-color: var(--white-color);
     box-shadow: 2px 3px 6px 0px #c7c6c6;
     transform: translateX(calc(-100% - 30px));
+    overflow: hidden;
     z-index: 111;
 }
-.navbar .side-nav .show-side {
-    transform: translateX(0);
-}
-@media(max-width: 767px) {
-    .navbar .side-nav .nav {
+@media(max-width: 567px) {
+    .navbar .my-profile > .side {
         width: 100%;
     }
 }
-.navbar .side-nav .nav .head {
-    margin-bottom: 30px;
+.navbar .my-profile .show-side {
+    transform: translateX(0);
+}
+.navbar .my-profile > .side .head {
+    margin: 0px;
     padding: 0 20px;
     color: var(--black-color);
+    border-bottom: 1px solid var(--main-color);
 }
-.navbar .side-nav .nav .head h3 {
-    margin: 0 0 20px 0;
+.navbar .my-profile > .side .head h3 {
+    margin: 0 0 15px 0;
+    font-size: 1.3rem;
 }
-.navbar .side-nav .nav .head .close {
+.navbar .my-profile > .side .head .close {
     position: absolute;
     right: 20px;
     top: 20px;
@@ -202,75 +229,283 @@ body {
     cursor: pointer;
     color: var(--black-color);
 }
-.navbar .side-nav .nav .head span {
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
+/* End Side */
+/* Start Not User */
+.navbar .my-profile > .not-user {
+    display: none;
 }
-.navbar .side-nav .nav > ul.others-game {
-    padding: 0;
-    list-style: none;
-    border-bottom: 1px solid #ddd;
-}
-.navbar .side-nav .nav ul.others-game > li a {
-    padding: 10px 20px;
-    font-size: 15px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: 0.3s;
-    text-decoration: none;
-    color: var(--black-color);
+.navbar .my-profile > .not-user .signUp {
+    height: 70%;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-}
-.navbar .side-nav .nav ul.others-game > li a:hover {
-    background-color: #eee;
-    color: black;
-}
-.navbar .side-nav .nav ul.others-game > li > a img {
-    height: 22px;
-    width: 22px;
-    margin-right: 15px;
-}
-.navbar .side-nav .nav ul.others-game > li:last-child a > span {
-    padding-left: 40px;
-}
-.navbar .side-nav .nav .sign-up {
-    display: flex;
-    padding: 0 20px;
+    padding: 20px;
     gap: 10px;
-    justify-content: space-between;
 }
-.navbar .side-nav .nav .sign-up button {
-    flex: 1;
+.navbar .my-profile > .not-user .signUp p {
+    max-width: 520px;
     padding: 10px;
-    max-width: 250px;
-    color: var(--black-color);
-    border: 1px solid var(--black-color);
-    border-radius: 4px;
-    background-color: transparent;
-    cursor: pointer;
-    transition: 0.3s;
+    margin: 30px auto;
+    font-weight: 500;
+    letter-spacing: 1px;
+    line-height: 1.6;
+    text-align: center;
 }
-.navbar .side-nav .nav .sign-up button:first-child {
+.navbar .my-profile > .not-user .signUp button:first-of-type {
     background-color: var(--black-color);
     color: var(--white-color);
 }
-.navbar .side-nav .nav .sign-up button:first-child:hover {
+.navbar .my-profile > .not-user .signUp button:first-of-type:hover {
     background-color: var(--hover-color);
     border-color:var(--hover-color);
-    /* color: white; */
 }
-.navbar .side-nav .nav .sign-up button:last-child:hover {
+.navbar .my-profile > .not-user .signUp button:last-of-type {
+    background-color: transparent;
+    color: var(--black-color);
+}
+.navbar .my-profile > .not-user .signUp button:last-of-type:hover {
     background-color: var(--black-color);
     color: var(--white-color);    
 }
+.navbar .my-profile > .not-user .signUp > span {
+    font-weight: 600;
+    margin: 5px 0;
+}
+/* End Not User */
+/* ---------------------------------- */
+/* ---------------------------------- */
+/* ---------------------------------- */
+/* ---------------------------------- */
+/* ---------------------------------- */
+/* Start User */
+.navbar .my-profile > .user {
+    display: none;
+}
+.navbar .my-profile > .user > .profile {
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.navbar .my-profile > .user > .profile .img {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 1px solid var(--main-color);
+    overflow: hidden;
+}
+.navbar .my-profile > .user > .profile .img > img {
+    max-width: 100%;
+}
+.navbar .my-profile > .user > .profile .name {
+    margin: 0 0 30px 0;
+}
+.navbar .my-profile > .user > .profile .name > h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+}
+.navbar .my-profile > .user > .profile .level {
+    text-align: center;
+    margin-bottom: 25px;
+}
+.navbar .my-profile > .user > .profile .level > p {
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--hover-color);
+}
+.navbar .my-profile > .user > .profile .level .rate {
+    position: relative;
+    width: 250px;
+    height: 17px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--main-color);
+}
+.navbar .my-profile > .user > .profile .level .rate > span {
+    position: absolute;
+    height: 100%;
+    padding: 0 3px;
+    left: 0;
+    top: 0;
+    text-align: right;
+    color: white;
+    background-color: var(--green-color);
+}
+.navbar .my-profile > .user > .profile .profile-points > p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--gold-color);
+}
+.navbar .my-profile > .user .log-out {
+    height: 33%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 20px;
+    gap: 10px;
+}
+.navbar .my-profile > .user .log-out button {
+    width: 110px;
+}
+.navbar .my-profile > .user .log-out button:first-of-type {
+    background-color: #c00404;
+    border: 0;
+    color: white;
+}
+.navbar .my-profile > .user .log-out button:first-of-type:hover {
+    background-color: #da0f0f;
+}
+.navbar .my-profile > .user .log-out button:last-of-type {
+    background-color: var(--black-color);
+    color: var(--white-color);    
+}
+.navbar .my-profile > .user .log-out button:last-of-type:hover {
+    background-color: var(--white-color);
+    color: var(--black-color);    
+}
+/* End User */
+/* ---------------------------------- */
+/* ---------------------------------- */
+/* ---------------------------------- */
+/* ---------------------------------- */
+/* ---------------------------------- */
+/* Start Sign Up and Log In */
+/* Sign Up */
+.navbar .my-profile > .sign-up {
+    /* display: none; */
+}
+/* ---------------------------------- */
+/* Log In */
+.navbar .my-profile > .log-in {
+    display: none;
+}
+.navbar .my-profile .form {
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 20px;
+    gap: 10px;
+    color: var(--black-color);
+}
+.navbar .my-profile .form > h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin: 40px 0 15px;
+}
+.navbar .my-profile .form form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+.navbar .my-profile .form form input {
+    min-height: 45px;
+    width: 320px;
+    max-width: 320px;
+    padding: 5px;
+    border-radius: 10px 0;
+    font-weight: 500;
+    border: 1px solid var(--main-color);
+    background-color: transparent;
+    color: var(--black-color);
+}
+.navbar .my-profile > .sign-up > .form .gender {
+    margin: 0;
+    text-align: center;
+}
+.navbar .my-profile > .sign-up > .form .gender > span {
+    display: inline-block;
+    padding: 5px 7px;
+    width: 70px;
+    margin: 0 10px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 400;
+    transition: 0.3s;
+    cursor: pointer;
+    color: var(--white-color);
+    background-color: var(--black-color);
+}
+.navbar .my-profile > .sign-up > .form .gender > span.select {
+    color: var(--main-color);
+    background-color: var(--hover-color);
+}
+.navbar .my-profile .form form button:last-of-type {
+    margin: 10px auto;
+}
+.navbar .my-profile .form form .with-social {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+.navbar .my-profile .form form .with-social > p {
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0 0 10px 0;
+}
+.navbar .my-profile .form form .with-social > div {
+    padding: 10px 25px;
+    margin: 0 auto 10px;
+    width: 300px;
+    border-radius: 3px;
+    text-align: left;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.navbar .my-profile .form form .with-social > div:hover {
+    opacity: .9;
+}
+.navbar .my-profile .form form .with-social > div.google {
+    background-color: #ea4335;
+}
+.navbar .my-profile .form form .with-social > div.facebook {
+    background-color: #1877f2;
+}
+.navbar .my-profile .form form .with-social > div i {
+    margin-right: 10px;
+}
+.navbar .my-profile .form form p.member {
+    font-size: 15px;
+    font-weight: 500;
+    margin: 10px 0 0;
+}
+.navbar .my-profile .form form p.member span {
+    letter-spacing: 1px;
+    margin-left: 5px;
+    color: blue;
+    cursor: pointer;
+}
+/* End Sign Up and Log In */
+/* End Side Bar */
 /* ---------------------------- */
 .navbar .title h1 {
     margin: 0;
     letter-spacing: -1px;
-    font-size: 1.5rem;
+    font-size: 1.5rem;  
     color: var(--black-color);
+}
+@media(max-width: 767px) {
+    .navbar .title h1 {
+        /* display: none; */
+        font-size: 1.4rem;
+    }
 }
 /* ---------------------------- */
 .navbar .tools {
@@ -348,7 +583,7 @@ body {
 }
 .overlay .info > .ul-info > li {
     margin-bottom: 8px;
-    width: 90%;
+    width: 100%;
     line-height: 1.5;
 }
 .overlay .info > .example {
@@ -638,11 +873,14 @@ body {
 }
 /* End Dark Mode */
 .overlay .setting .ul-setting li p {
-    margin-right: 50px;
+    margin-right: 20px;
+    font-weight: 600;
 }
 .overlay .setting .ul-setting li p span {
     display: block;
-    font-size: 12px;
+    margin-top: 3px;
+    font-size: 13px;
+    font-weight: 600;
     color: var(--hover-color);
 }
 .overlay .setting .ul-setting li a {
@@ -692,6 +930,48 @@ body {
     color: var(--green-color);
 }
 /* End CheckBox */
+/* Start Change Play Mode */
+.overlay .setting .ul-setting > .change-mode {
+    align-items: flex-start;
+    flex-direction: column;
+    color: var(--black-color);
+    font-size: 17px;
+    font-weight: 500;
+    padding-bottom: 15px;
+}
+.overlay .setting .ul-setting > .change-mode > p {
+    margin-bottom: 0;
+}
+.overlay .setting .ul-setting > .change-mode > span {
+    margin-right: 10px;
+    line-height: 1.5;
+    font-size: 13px;
+    margin-top: 3px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: var(--hover-color);
+}
+.overlay .setting .ul-setting > .change-mode > .game-mode {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;    
+}
+.overlay .setting .ul-setting > .change-mode > .game-mode > span {
+    padding: 5px 7px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 400;
+    transition: 0.3s;
+    cursor: pointer;
+    color: var(--white-color);
+    background-color: var(--black-color);
+}
+.overlay .setting .ul-setting > .change-mode > .game-mode > span.select {
+    color: var(--main-color);
+    background-color: var(--hover-color);
+}
+/* End Change Play Mode */
 /* End Overlay */
 /* ---------------------------- */
 /* Start Game */
@@ -729,8 +1009,8 @@ body {
     gap: 5px;
 }
 .game .inputs .row-i span {
-    width: 100%;
-    max-height: 55px;
+    max-width: 98%;
+    max-height: 45px;
     margin-bottom: 5px;
     display: inline-flex;
     justify-content: center;
