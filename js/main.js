@@ -17,6 +17,129 @@ const toggler = () => {
             });
         }
     });
+    // ------------------------------------
+    // ------------------------------------
+    // ------------------------------------
+    // ------------------------------------
+    // Start Open Profile or signup or login
+    const sides = document.querySelectorAll(".my-profile .side");
+    const signup = document.querySelector(".my-profile .sign-up .main-btn");
+    const login = document.querySelector(".my-profile .log-in .main-btn");
+    const logout = document.querySelector(".my-profile .log-out .out");
+    const otherLog = document.querySelector(".my-profile .member span");
+    // --------------------------
+    // open user
+    login.onclick = () => {
+        sides.forEach(side => {
+            if (!side.classList.contains("user")) {
+                side.style.opacity = 0.2;
+                setTimeout(() => {
+                    side.classList.remove("show");
+                }, 500);
+            } else {
+                setTimeout(() => {
+                    side.classList.add("show");
+                }, 800);
+                setTimeout(() => {
+                    side.style.opacity = 1;
+                }, 1000);
+            }
+        });
+    };
+    // open Login 
+    signup.onclick = () => {
+        sides.forEach(side => {
+            if (!side.classList.contains("log-in")) {
+                side.style.opacity = 0.2;
+                setTimeout(() => {
+                    side.classList.remove("show");
+                }, 500);
+            } else {
+                setTimeout(() => {
+                    side.classList.add("show");
+                }, 800);
+                setTimeout(() => {
+                    side.style.opacity = 1;
+                }, 1000);
+            }
+        });
+    };
+    // open Login Other
+    otherLog.onclick = () => {
+        sides.forEach(side => {
+            if (!side.classList.contains("log-in")) {
+                side.style.opacity = 0.2;
+                setTimeout(() => {
+                    side.classList.remove("show");
+                }, 500);
+            } else {
+                setTimeout(() => {
+                    side.classList.add("show");
+                }, 800);
+                setTimeout(() => {
+                    side.style.opacity = 1;
+                }, 1000);
+            }
+        });
+    };
+    // open Login before click btn logout
+    logout.onclick = () => {
+            sides.forEach(side => {
+            if (!side.classList.contains("log-in")) {
+                side.style.opacity = 0.2;
+                setTimeout(() => {
+                    side.classList.remove("show");
+                }, 500);
+            } else {
+                setTimeout(() => {
+                    side.classList.add("show");
+                }, 800);
+                setTimeout(() => {
+                    side.style.opacity = 1;
+                }, 1000);
+            }
+        });
+    }
+    // BTN Events
+    document.addEventListener("click", (e) => {
+        // Log in
+        if (e.target.textContent == "Log in") {
+            sides.forEach(side => {
+                if (!side.classList.contains("log-in")) {
+                    side.style.opacity = 0.2;
+                    setTimeout(() => {
+                        side.classList.remove("show");
+                    }, 500);
+                } else {
+                    setTimeout(() => {
+                        side.classList.add("show");
+                    }, 800);
+                    setTimeout(() => {
+                        side.style.opacity = 1;
+                    }, 1000);
+                }
+            });
+        }
+        // Sign Up
+        if (e.target.textContent == "Sign Up") {
+            sides.forEach(side => {
+                if (!side.classList.contains("sign-up")) {
+                    side.style.opacity = 0.2;
+                    setTimeout(() => {
+                        side.classList.remove("show");
+                    }, 500);
+                } else {
+                    setTimeout(() => {
+                        side.classList.add("show");
+                    }, 800);
+                    setTimeout(() => {
+                        side.style.opacity = 1;
+                    }, 1000);
+                }
+            });
+        }
+    });
+    // End Open Profile or signup or login
 };
 toggler();
 // ------------------------------------------
@@ -206,10 +329,10 @@ const game = () => {
         const rowInputs = document.querySelectorAll(".inputs .row-i"),
             btnLetters = document.querySelectorAll(".letters button"),
             words = [];
-        let beginner = "../words file/beginner.json",
-            amateur = "../words file/amateur.json",
-            semiPro = "../words file/semi-pro.json",
-            professional = "../words file/professional.json",
+        let beginner = "https://mohammedgomaa22.github.io/w-challenge/words%20file/beginner.json",
+            amateur = "https://mohammedgomaa22.github.io/w-challenge/words%20file/amateur.json",
+            semiPro = "https://mohammedgomaa22.github.io/w-challenge/words%20file/semi-pro.json",
+            professional = "https://mohammedgomaa22.github.io/w-challenge/words%20file/professional.json",
             playMode = beginner,
             mode = document.querySelectorAll(".change-mode .game-mode span");
         // -----------------------------
@@ -277,7 +400,8 @@ const game = () => {
         };
         gameMode();
         // -----------------------------
-        setTimeout(() => {
+
+        // setTimeout(() => {
             fetch(playMode).then((obj) => obj.json()).then((obj) => {
                 obj.allWords.forEach(word => {
                     words.push(word.toLowerCase());
@@ -592,7 +716,7 @@ const game = () => {
                     // --------- End Functions With clicked Enter Key ---------
                 }, 0);
             });   
-        }, 0);
+        // }, 0);
     };
     gamePlay();
     // -------------------------- End Game Play --------------------------

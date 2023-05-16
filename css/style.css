@@ -202,6 +202,10 @@ input:focus {
     transform: translateX(calc(-100% - 30px));
     overflow: hidden;
     z-index: 111;
+    display: none;
+}
+.navbar .my-profile > .show {
+    display: block;
 }
 @media(max-width: 567px) {
     .navbar .my-profile > .side {
@@ -231,9 +235,6 @@ input:focus {
 }
 /* End Side */
 /* Start Not User */
-.navbar .my-profile > .not-user {
-    display: none;
-}
 .navbar .my-profile > .not-user .signUp {
     height: 70%;
     display: flex;
@@ -279,9 +280,6 @@ input:focus {
 /* ---------------------------------- */
 /* ---------------------------------- */
 /* Start User */
-.navbar .my-profile > .user {
-    display: none;
-}
 .navbar .my-profile > .user > .profile {
     height: 60%;
     display: flex;
@@ -380,15 +378,7 @@ input:focus {
 /* ---------------------------------- */
 /* ---------------------------------- */
 /* Start Sign Up and Log In */
-/* Sign Up */
-.navbar .my-profile > .sign-up {
-    /* display: none; */
-}
 /* ---------------------------------- */
-/* Log In */
-.navbar .my-profile > .log-in {
-    display: none;
-}
 .navbar .my-profile .form {
     height: 85%;
     display: flex;
