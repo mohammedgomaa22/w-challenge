@@ -32,10 +32,11 @@
                     </div>
                     <!-- Sign Up -->
                     <div class="signUp">
+                        <h3 class="soon">Wait Soon</h3>
                         <p>To save your score, You must log in, If you not have previous account, You must to sign up a new account first.</p>
-                        <button class="main-btn">Log in</button>
+                        <button class="main-btn" data-open="login">Log in</button>
                         <span>OR</span>
-                        <button class="main-btn">Sign Up</button>
+                        <button class="main-btn" data-open="signup">Sign Up</button>
                     </div>
                 </div>
                 <!-- End Not User -->
@@ -67,8 +68,8 @@
                     </div>
                     <!-- Log Out -->
                     <div class="log-out">
-                        <button class="main-btn out">Log out</button>
-                        <button class="main-btn">Edit</button>
+                        <button class="main-btn out" data-open="login">Log out</button>
+                        <button class="main-btn" data-open="edit-data">Edit</button>
                     </div>
                 </div>
                 <!-- End User -->
@@ -80,6 +81,7 @@
                     </div>
                     <div class="form">
                         <h3>Sign Up</h3>
+                        <h3 class="soon">Wait Soon</h3>
                         <form>
                             <input type="text" min="6" max="18" placeholder="User Name" required>
                             <input type="email" placeholder="Email" required>
@@ -88,20 +90,20 @@
                                 <span class="" data-gender="male">Male</span>
                                 <span class="select" data-gender="female">Female</span>
                             </div>
-                            <button  class="main-btn">Sign Up</button>
+                            <button  class="main-btn" data-open="login">Sign Up</button>
                             <!-- With Social -->
                             <div class="with-social">
                                 <p>or Contact with Social Media</p>
-                                <div class="google">
+                                <div class="google" data-open="user">
                                     <i class="fab fa-google"></i>
                                     Sign Up with Google
                                 </div>
-                                <div class="facebook">
+                                <div class="facebook" data-open="user">
                                     <i class="fab fa-facebook-f"></i>
                                     Sign Up with Facebook
                                 </div>
                             </div>
-                            <p class="member">I'am already a member, <span>Log In</span></p>
+                            <p class="member">I'am already a member, <span data-open="login">Log In</span></p>
                         </form>
                     </div>
                 </div>
@@ -114,23 +116,24 @@
                     </div>
                     <div class="form">
                         <h3>Log in</h3>
+                        <h3 class="soon">Wait Soon</h3>
                         <form>
                             <input type="text" min="6" max="18" placeholder="User Name Or Email" required>
                             <input type="password" placeholder="Password" required>
-                            <button class="main-btn">Log In</button>
+                            <button class="main-btn" data-open="user">Log In</button>
                             <!-- With Social -->
                             <div class="with-social">
                                 <p>or Contact with Social Media</p>
-                                <div class="google">
+                                <div class="google" data-open="user">
                                     <i class="fab fa-google"></i>
                                     Log In Up with Google
                                 </div>
-                                <div class="facebook">
+                                <div class="facebook" data-open="user">
                                     <i class="fab fa-facebook-f"></i>
                                     Log In with Facebook
                                 </div>
                             </div>
-                            <p class="member">I'am not a member, <span>Sign Up</span></p>
+                            <p class="member">I'am not a member, <span data-open="signup">Sign Up</span></p>
                         </form>
                     </div>
                 </div>
@@ -226,7 +229,8 @@
                     <div class="head">
                         <!-- BTN Close -->
                         <i class="close fas fa-xmark"></i>
-                        <h3>Weekly Ranking</h3>
+                        <h3>Wait Soon</h3>
+                        <!-- <h3>Weekly Ranking</h3> -->
                         <!-- Top Players -->
                         <div class="top-players">
                             <div>
@@ -245,32 +249,32 @@
                         <li>
                             <img src="pic/1.jpg" alt="">
                             <div class="name">Mohammed22</div>
-                            <div class="points">393 pt</div>
+                            <div class="points">0 pt</div>
                         </li>
                         <li>
                             <img src="pic/notti.jpg" alt="">
-                            <div class="name">Gom3a13</div>
-                            <div class="points">356 pt</div>
+                            <div class="name">Alii33</div>
+                            <div class="points">0 pt</div>
                         </li>
                         <li>
                             <img src="pic/friend-03.jpg" alt="">
-                            <div class="name">Abdullah89</div>
-                            <div class="points">340 pt</div>
+                            <div class="name">guest_85</div>
+                            <div class="points">0 pt</div>
                         </li>
                         <li>
                             <img src="pic/friend-01.jpg" alt="">
-                            <div class="name">Aliii</div>
-                            <div class="points">320 pt</div>
+                            <div class="name">guest_1257</div>
+                            <div class="points">0 pt</div>
                         </li>
                         <li>
                             <img src="pic/friend-04.jpg" alt="">
-                            <div class="name">Saiid</div>
-                            <div class="points">316 pt</div>
+                            <div class="name">guest_121</div>
+                            <div class="points">0 pt</div>
                         </li>
                         <li>
                             <img src="pic/friend-05.jpg" alt="">
-                            <div class="name">guest_11535</div>
-                            <div class="points">290 pt</div>
+                            <div class="name">guest_1153</div>
+                            <div class="points">0 pt</div>
                         </li>
                     </ul>
                 </div>
@@ -383,7 +387,10 @@
             <!-- End Game -->
         </div>
     </div>
-    <!-- JS File -->
-    <script src="js/main.js"></script>
+    <!-- JS Files -->
+    <script src="js/gamePlay.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/sidebar(open,close).js"></script>
+    <script src="js/navbar(info.rank.sett).js"></script>
 </body>
 </html>

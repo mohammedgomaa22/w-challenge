@@ -148,10 +148,16 @@ input:focus {
     background-color: var(--white-color);
     color: var(--black-color);
 }
+.soon {
+    font-size: 3rem;
+    margin: 0;
+    color: var(--green-color);
+}
 /* End Component */
 /* Start Page */
 .page {
     height: 100vh;
+    overflow: auto;
     background-color: var(--white-color);
 }
 .page .content {
@@ -160,8 +166,8 @@ input:focus {
     align-items: center;
     height: calc(100vh - 70px);
     position: relative;
-    overflow: hidden;
-    padding-bottom: 60px;
+    overflow: auto;
+    /* padding-bottom: 40px; */
 }
 @media(max-width: 567px) {
     .page .content {
@@ -968,15 +974,17 @@ input:focus {
 .game {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    gap: 20px;
+    gap: 25px;
+    height: 100%;
     width: 100%;
-    padding: 15px 7px;
+    padding: 30px 5px 15px;
     color: var(--black-color);
 }
 @media(max-width: 567px) {
     .game {
+        gap: 10px;
         padding-bottom: 20px;
         height: 100%;
         padding-top: 25px;
@@ -991,7 +999,12 @@ input:focus {
 @media(max-width: 767px) {
     .game .inputs {
         min-width: 300px;
-        padding: 0 20px;
+        padding: 0 10px;
+    }
+}
+@media(max-width: 460px) {
+    .game .inputs {
+        min-width: 90%;
     }
 }
 .game .inputs .row-i {
@@ -999,8 +1012,8 @@ input:focus {
     gap: 5px;
 }
 .game .inputs .row-i span {
-    max-width: 98%;
-    max-height: 45px;
+    max-width: 95%;
+    max-height: 55px;
     margin-bottom: 5px;
     display: inline-flex;
     justify-content: center;
@@ -1012,6 +1025,11 @@ input:focus {
     text-transform: uppercase;
     transition: 0.5s;
 }
+@media(max-width: 460px) {
+    .game .inputs .row-i span {
+        max-height: 50px;
+    }
+}
 .game .inputs .row-i span::before {
     content: "";
     display: inline-block;
@@ -1022,17 +1040,17 @@ input:focus {
 }
 /* ---------------------------- */
 .game .letters {
-    width: 100%;
+    width: 500px;
     margin: 0 auto;
 }
-@media(min-width: 460px) {
+@media(max-width: 567px) {
     .game .letters {
-        width: 450px;
+        max-width: 100%;
     }
 }
 .game .letters .row-l {
     display: flex;
-    gap: 5px;
+    gap: 3px;
     width: 100%;
     margin: 0 auto;
 }
@@ -1053,9 +1071,8 @@ input:focus {
     flex: 2;
 }
 .game .letters .row-l button {
-    height: 58px;
+    height: 50px;
     margin-bottom: 5px;
-    font-size: 1.25rem;
     border-radius: 4px;
     font-weight: 700;
     text-transform: uppercase;
@@ -1064,6 +1081,12 @@ input:focus {
     align-items: center;
     flex: 1;
     cursor: pointer;
+}
+@media(min-width: 460px) {
+    .game .letters .row-l button {
+        height: 60px;
+        font-size: 1.5rem;
+    }
 }
 /* End Game */
 /* ---------------------------- */
